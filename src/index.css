@@ -721,3 +721,80 @@ footer {
 		padding: 2rem;
 	}
 }
+
+/* ===================================
+   NEW PORTFOLIO DESIGN SYSTEM
+=================================== */
+
+:root {
+	--bg-primary: #1a1a1a;
+	--bg-secondary: #252525;
+	--bg-card: #2d2d2d;
+
+	--text-primary: #ffffff;
+	--text-secondary: #a3a3a3;
+
+	--accent: #ffdbac;
+	--accent-hover: #f0c68f;
+
+	--border-color: #454545;
+}
+
+[data-theme="light"] {
+	--bg-primary: #f8f6f2;
+	--bg-secondary: #ffffff;
+	--bg-card: #ffffff;
+
+	--text-primary: #1a1a1a;
+	--text-secondary: #606060;
+
+	--accent: #a66b30;
+	--accent-hover: #895521;
+
+	--border-color: #dedbd5;
+}
+
+body,
+[data-theme="dark"] body {
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	transition:
+		background-color 0.35s ease,
+		color 0.35s ease;
+}
+
+header,
+footer,
+[data-theme="dark"] header,
+[data-theme="dark"] footer {
+	background: var(--bg-primary);
+	border-color: var(--border-color);
+}
+
+a,
+[data-theme="dark"] a {
+	color: var(--accent);
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--bg-primary);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
