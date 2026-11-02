@@ -1,31 +1,39 @@
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
-	const [dark, setDark] = useState(() => {
+	const [theme, setTheme] = useState(() => {
 		try {
-			return localStorage.getItem("portfolio-theme") === "dark";
+			return localStorage.getItem("portfolio-theme") === "light"
+				? "light"
+				: "dark";
 		} catch {
-			return false;
+			return "dark";
 		}
 	});
 
 	useEffect(() => {
-		document.documentElement.dataset.theme = dark ? "dark" : "light";
+		document.documentElement.dataset.theme = theme;
 
 		try {
-			localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
+			localStorage.setItem("portfolio-theme", theme);
 		} catch {
-			// Theme still works if storage is unavailable.
+			// The theme still works if storage is unavailable.
 		}
-	}, [dark]);
+	}, [theme]);
 
 	return (
 		<button
-			className='theme-toggle'
 			type='button'
-			aria-pressed={dark}
-			onClick={() => setDark((previous) => !previous)}>
-			{dark ? "☀️ Light Mode" : "🌙 Dark Mode"}
+			className='theme-toggle-new'
+			onClick={() =>
+				setTheme((current) => (current === "dark" ? "light" : "dark"))
+			}
+			aria-label={
+				theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+			}
+			title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}>
+			{theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
 		</button>
 	);
 }
