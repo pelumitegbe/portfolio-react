@@ -1,4 +1,6 @@
 import { Link } from "react-router";
+import Hero from "../components/Hero.jsx";
+import Highlights from "../components/Highlights.jsx";
 
 const skills = [
 	{
@@ -76,98 +78,9 @@ function ExperienceCard({ experience }) {
 
 export function Home() {
 	return (
-		<div className='home-page'>
-			<section className='hero'>
-				<div className='hero-content'>
-					<span className='hero-label'>
-						SOFTWARE ENGINEER • FULL-STACK DEVELOPER
-					</span>
-
-					<h1>
-						Hi, I'm <span className='highlight'>Pelumi.</span>
-					</h1>
-
-					<h2>Building software that solves real-world problems.</h2>
-
-					<p>
-						I'm a software developer and Master's student in Computer Science at
-						Saint Louis University. I enjoy building web applications, designing
-						backend systems, and exploring artificial intelligence and emerging
-						technologies.
-					</p>
-
-					<div className='hero-buttons'>
-						<Link
-							to='/projects'
-							className='btn btn-primary'>
-							View My Projects →
-						</Link>
-
-						<Link
-							to='/contact'
-							className='btn btn-secondary'>
-							Get in Touch
-						</Link>
-					</div>
-				</div>
-			</section>
-
-			<section className='home-section'>
-				<div className='section-heading'>
-					<span className='section-label'>WHAT I DO</span>
-					<h2>Areas of Expertise</h2>
-				</div>
-
-				<div className='expertise-grid'>
-					<article className='expertise-card'>
-						<div className='expertise-icon'>{"</>"}</div>
-
-						<h3>Frontend Development</h3>
-
-						<p>
-							Building responsive and accessible user interfaces using modern
-							web technologies.
-						</p>
-					</article>
-
-					<article className='expertise-card'>
-						<div className='expertise-icon'>{"{ }"}</div>
-
-						<h3>Backend Development</h3>
-
-						<p>
-							Developing APIs, server-side applications, and database-driven
-							software solutions.
-						</p>
-					</article>
-
-					<article className='expertise-card'>
-						<div className='expertise-icon'>AI</div>
-
-						<h3>AI & Machine Learning</h3>
-
-						<p>
-							Exploring machine learning techniques and intelligent applications
-							for practical problem-solving.
-						</p>
-					</article>
-				</div>
-			</section>
-
-			<section className='home-cta'>
-				<h2>Interested in what I've built?</h2>
-
-				<p>
-					Explore my projects to learn more about my technical experience and
-					contributions.
-				</p>
-
-				<Link
-					to='/projects'
-					className='btn btn-primary'>
-					Explore Projects →
-				</Link>
-			</section>
+		<div className='home-redesign'>
+			<Hero />
+			<Highlights />
 		</div>
 	);
 }
