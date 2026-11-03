@@ -332,3 +332,9 @@ main#main-content:focus {
 .skip-link:focus {
 	top: 1rem;
 }
+
+/* Additional spacing below the navigation */
+
+main#main-content {
+	padding-top: 3rem;
+}

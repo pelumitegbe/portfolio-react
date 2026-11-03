@@ -5,6 +5,9 @@ import App from "./App.jsx";
 import "./index.css";
 import "./hero.css";
 import "./navigation.css";
+import "./experience.css";
+import "./projects.css";
+import "./contact.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>

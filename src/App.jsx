@@ -2,7 +2,11 @@ import { Routes, Route } from "react-router";
 
 import Layout from "./components/Layout.jsx";
 
-import { Home, Experience, Contact, NotFound } from "./pages/BasicPages.jsx";
+import { Home, NotFound } from "./pages/BasicPages.jsx";
+
+import Contact from "./pages/Contact.jsx";
+
+import Experience from "./pages/Experience.jsx";
 
 import Projects from "./pages/Projects.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";

@@ -13,7 +13,7 @@
 	grid-template-columns: 1.1fr 0.9fr;
 	align-items: center;
 	gap: 2rem;
-	padding: 5rem 0 7rem;
+	padding: 4rem 0 7rem;
 	isolation: isolate;
 }
 
@@ -485,4 +485,25 @@
 	.hero-socials a {
 		transition: none;
 	}
+}
+
+/* Improve illustration visibility in light mode */
+
+[data-theme="light"] .hero-visual-ring {
+	border: 1px solid rgba(166, 107, 48, 0.28);
+}
+
+[data-theme="light"] .hero-glow-one {
+	background: rgba(166, 107, 48, 0.09);
+}
+
+[data-theme="light"] .hero-glow-two {
+	background: rgba(166, 107, 48, 0.06);
+}
+
+[data-theme="light"] .hero-floating-tag {
+	background: #ffffff;
+	color: #a66b30;
+	border: 1px solid rgba(166, 107, 48, 0.3);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { projects } from "../data/projects.js";
 import ProjectCard from "../components/ProjectCard.jsx";
+import { Search, X } from "lucide-react";
 
 export default function Projects() {
 	const [query, setQuery] = useState("");
@@ -27,16 +28,31 @@ export default function Projects() {
 				engineering, web development, and machine learning.
 			</p>
 
-			<div className='filter-container'>
-				<label htmlFor='project-search'>Search Projects</label>
+			<div className='portfolio-search'>
+				<Search
+					size={19}
+					className='portfolio-search-icon'
+					aria-hidden='true'
+				/>
 
 				<input
 					id='project-search'
 					type='search'
-					placeholder='Search by name, category, or technology...'
 					value={query}
 					onChange={(event) => setQuery(event.target.value)}
+					placeholder='Search projects...'
+					aria-label='Search projects'
 				/>
+
+				{query && (
+					<button
+						type='button'
+						className='portfolio-search-clear'
+						onClick={() => setQuery("")}
+						aria-label='Clear search'>
+						<X size={18} />
+					</button>
+				)}
 			</div>
 
 			<p role='status'>{filteredProjects.length} project(s) found</p>
