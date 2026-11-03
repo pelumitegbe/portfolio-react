@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import Reveal from "../components/Reveal.jsx";
 import {
 	ArrowUpRight,
-	ArrowRight,
 	Mail,
 	MapPin,
 	Send,
@@ -10,61 +9,46 @@ import {
 } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
-const EMAIL = "pelumitegbe@gmail.com";
-
-function Reveal({ children, className = "" }) {
-	const reduceMotion = useReducedMotion();
-
-	return (
-		<motion.div
-			className={className}
-			initial={reduceMotion ? false : { opacity: 0, y: 30 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.2 }}
-			transition={{ duration: 0.6, ease: "easeOut" }}>
-			{children}
-		</motion.div>
-	);
-}
+const contactEmail = "pelumitegbe@gmail.com";
 
 function ContactForm() {
-	const [form, setForm] = useState({
+	const [messageDetails, setMessageDetails] = useState({
 		name: "",
 		email: "",
 		subject: "",
 		message: "",
 	});
 
-	const [submitted, setSubmitted] = useState(false);
+	const [emailOpened, setEmailOpened] = useState(false);
 
 	function handleChange(event) {
 		const { name, value } = event.target;
 
-		setForm((previous) => ({
+		setMessageDetails((previous) => ({
 			...previous,
 			[name]: value,
 		}));
 
-		setSubmitted(false);
+		setEmailOpened(false);
 	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
 
 		const subject = encodeURIComponent(
-			form.subject.trim() || `Portfolio inquiry from ${form.name.trim()}`,
+			messageDetails.subject.trim() || `Portfolio inquiry from ${messageDetails.name.trim()}`,
 		);
 
 		const body = encodeURIComponent(
-			`Name: ${form.name.trim()}\n` +
-				`Email: ${form.email.trim()}\n\n` +
-				`${form.message.trim()}`,
+			`Name: ${messageDetails.name.trim()}\n` +
+				`Email: ${messageDetails.email.trim()}\n\n` +
+				`${messageDetails.message.trim()}`,
 		);
 
-		const mailto = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+		const mailto = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 
 		window.location.href = mailto;
-		setSubmitted(true);
+		setEmailOpened(true);
 	}
 
 	return (
@@ -92,7 +76,7 @@ function ContactForm() {
 						type='text'
 						autoComplete='name'
 						placeholder='Your name'
-						value={form.name}
+						value={messageDetails.name}
 						onChange={handleChange}
 						required
 						maxLength={100}
@@ -108,7 +92,7 @@ function ContactForm() {
 						type='email'
 						autoComplete='email'
 						placeholder='you@example.com'
-						value={form.email}
+						value={messageDetails.email}
 						onChange={handleChange}
 						required
 						maxLength={254}
@@ -124,7 +108,7 @@ function ContactForm() {
 					name='subject'
 					type='text'
 					placeholder='What would you like to discuss?'
-					value={form.subject}
+					value={messageDetails.subject}
 					onChange={handleChange}
 					maxLength={150}
 				/>
@@ -138,7 +122,7 @@ function ContactForm() {
 					name='message'
 					rows={6}
 					placeholder='Tell me a little about your project or opportunity...'
-					value={form.message}
+					value={messageDetails.message}
 					onChange={handleChange}
 					required
 					maxLength={5000}
@@ -160,7 +144,7 @@ function ContactForm() {
 				need to send it from there.
 			</p>
 
-			{submitted && (
+			{emailOpened && (
 				<p
 					className='contact-form-feedback'
 					role='status'>
@@ -178,40 +162,34 @@ function ContactForm() {
 export default function Contact() {
 	return (
 		<section className='contact-page'>
-			<Reveal className='contact-page-intro'>
-				<span className='contact-page-eyebrow'>04 / GET IN TOUCH</span>
+			<Reveal amount={0.2} className='contact-page-intro'>
+				<span className='contact-page-eyebrow'>CONTACT</span>
 
 				<h1>
 					Let's work <span>together.</span>
 				</h1>
 
 				<p>
-					I'm interested in software engineering opportunities, meaningful
-					collaborations, and projects that solve real problems. Have something
-					in mind? Let's talk.
+					You can reach me about software engineering roles, web projects,
+					or machine learning research.
 				</p>
 			</Reveal>
 
 			<div className='contact-page-grid'>
-				<Reveal className='contact-info'>
-					<div className='contact-availability'>
-						<span className='contact-availability-dot' />
-
-						<span>Open to opportunities and collaborations</span>
-					</div>
+				<Reveal amount={0.2} className='contact-info'>
 
 					<div className='contact-info-heading'>
 						<h2>Let's connect.</h2>
 
 						<p>
-							Whether it's a software project, a research collaboration, or
-							simply a conversation about technology, feel free to reach out.
+							Email is the best way to reach me. You can also find my work
+							on GitHub or connect with me on LinkedIn.
 						</p>
 					</div>
 
 					<div className='contact-methods'>
 						<a
-							href={`mailto:${EMAIL}`}
+							href={`mailto:${contactEmail}`}
 							className='contact-method'>
 							<span className='contact-method-icon'>
 								<Mail size={22} />
@@ -219,7 +197,7 @@ export default function Contact() {
 
 							<span className='contact-method-text'>
 								<small>EMAIL ME</small>
-								<strong>{EMAIL}</strong>
+								<strong>{contactEmail}</strong>
 							</span>
 
 							<ArrowUpRight size={20} />
@@ -236,7 +214,7 @@ export default function Contact() {
 
 							<span className='contact-method-text'>
 								<small>LINKEDIN</small>
-								<strong>Connect professionally</strong>
+								<strong>Pelumi Oluwategbe</strong>
 							</span>
 
 							<ArrowUpRight size={20} />
@@ -253,7 +231,7 @@ export default function Contact() {
 
 							<span className='contact-method-text'>
 								<small>GITHUB</small>
-								<strong>Explore my code</strong>
+								<strong>pelumitegbe</strong>
 							</span>
 
 							<ArrowUpRight size={20} />
@@ -270,19 +248,11 @@ export default function Contact() {
 					</div>
 				</Reveal>
 
-				<Reveal className='contact-form-panel'>
+				<Reveal amount={0.2} className='contact-form-panel'>
 					<ContactForm />
 				</Reveal>
 			</div>
 
-			<Reveal className='contact-bottom-cta'>
-				<span>HAVE SOMETHING INTERESTING IN MIND?</span>
-
-				<a href={`mailto:${EMAIL}`}>
-					Let's make it happen.
-					<ArrowRight size={28} />
-				</a>
-			</Reveal>
 		</section>
 	);
 }

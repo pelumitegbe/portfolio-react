@@ -1,6 +1,4 @@
-/* ==========================================
-   NAVIGATION
-========================================== */
+/* Navigation */
 
 .site-header {
 	position: sticky;
@@ -27,7 +25,7 @@
 
 .site-logo {
 	flex-shrink: 0;
-	color: var(--text-primary) !important;
+	color: var(--text-primary);
 	font-size: 2.3rem;
 	font-weight: 900;
 	line-height: 1;
@@ -49,7 +47,7 @@
 .site-navigation .nav-item {
 	position: relative;
 	padding: 0.7rem 0;
-	color: var(--text-secondary) !important;
+	color: var(--text-secondary);
 	font-size: 0.9rem;
 	font-weight: 600;
 	text-decoration: none;
@@ -58,7 +56,7 @@
 
 .site-navigation .nav-item:hover,
 .site-navigation .nav-item-active {
-	color: var(--accent) !important;
+	color: var(--accent);
 }
 
 .site-navigation .nav-item::after {
@@ -86,7 +84,7 @@
 	gap: 1rem;
 }
 
-.theme-toggle-new {
+.theme-toggle {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -104,7 +102,7 @@
 		background 0.25s ease;
 }
 
-.theme-toggle-new:hover {
+.theme-toggle:hover {
 	transform: rotate(15deg);
 	border-color: var(--accent);
 }
@@ -117,7 +115,7 @@
 	padding: 0.75rem 1.2rem;
 	border-radius: 7px;
 	background: var(--accent);
-	color: var(--bg-primary) !important;
+	color: var(--bg-primary);
 	font-size: 0.85rem;
 	font-weight: 700;
 	text-decoration: none;
@@ -144,17 +142,13 @@
 	cursor: pointer;
 }
 
-/* ==========================================
-   PAGE TRANSITIONS
-========================================== */
+/* Page transitions */
 
 .page-transition {
 	width: 100%;
 }
 
-/* ==========================================
-   FOOTER
-========================================== */
+/* Footer */
 
 .site-footer {
 	padding: 4rem 5% 1.5rem;
@@ -200,14 +194,14 @@
 }
 
 .footer-links a {
-	color: var(--text-secondary) !important;
+	color: var(--text-secondary);
 	font-size: 0.9rem;
 	text-decoration: none;
 	transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-	color: var(--accent) !important;
+	color: var(--accent);
 }
 
 .footer-bottom {
@@ -222,9 +216,7 @@
 	font-size: 0.8rem;
 }
 
-/* ==========================================
-   MOBILE NAVIGATION
-========================================== */
+/* Mobile navigation */
 
 @media (max-width: 900px) {
 	.nav-container {
@@ -299,7 +291,7 @@
 
 @media (prefers-reduced-motion: reduce) {
 	.site-navigation .nav-item::after,
-	.theme-toggle-new,
+	.theme-toggle,
 	.nav-contact-btn {
 		transition: none;
 	}
@@ -310,7 +302,7 @@ main#main-content {
 	max-width: 1400px;
 	min-height: 70vh;
 	margin: 0 auto;
-	padding: 0 5%;
+	padding: 3rem 5% 0;
 }
 
 main#main-content:focus {
@@ -324,17 +316,11 @@ main#main-content:focus {
 	z-index: 1000;
 	padding: 0.8rem 1rem;
 	background: var(--accent);
-	color: var(--bg-primary) !important;
+	color: var(--bg-primary);
 	border-radius: 6px;
 	text-decoration: none;
 }
 
 .skip-link:focus {
 	top: 1rem;
-}
-
-/* Additional spacing below the navigation */
-
-main#main-content {
-	padding-top: 3rem;
 }

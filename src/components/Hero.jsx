@@ -7,10 +7,10 @@ import { Link } from "react-router";
 const roles = [
 	"Full-Stack Developer",
 	"Software Engineer",
-	"AI & ML Enthusiast",
+	"Machine Learning Researcher",
 ];
 
-const container = {
+const introAnimation = {
 	hidden: {},
 	visible: {
 		transition: {
@@ -20,7 +20,7 @@ const container = {
 	},
 };
 
-const item = {
+const introItemAnimation = {
 	hidden: { opacity: 0, y: 28 },
 	visible: {
 		opacity: 1,
@@ -78,7 +78,7 @@ export default function Hero() {
 
 	return (
 		<section
-			className='hero-new'
+			className='hero'
 			aria-labelledby='hero-title'>
 			<div
 				className='hero-glow hero-glow-one'
@@ -90,35 +90,29 @@ export default function Hero() {
 			/>
 
 			<motion.div
-				className='hero-new-content'
-				variants={container}
+				className='hero-content'
+				variants={introAnimation}
 				initial={reduceMotion ? false : "hidden"}
 				animate='visible'>
-				<motion.p
-					className='hero-eyebrow'
-					variants={item}>
-					<span className='availability-dot' />
-					OPEN TO SOFTWARE ENGINEERING OPPORTUNITIES
-				</motion.p>
 
 				<motion.p
 					className='hero-greeting'
-					variants={item}>
+					variants={introItemAnimation}>
 					HI THERE, I'M
 				</motion.p>
 
 				<motion.h1
 					id='hero-title'
 					className='hero-name'
-					variants={item}>
+					variants={introItemAnimation}>
 					PELUMI<span className='hero-period'>.</span>
 				</motion.h1>
 
 				<motion.div
 					className='hero-role'
-					variants={item}>
+					variants={introItemAnimation}>
 					<span className='sr-only'>
-						Software Engineer, Full-Stack Developer, and AI/ML Enthusiast
+						Software Engineer, Full-Stack Developer, and Machine Learning Researcher
 					</span>
 					<span aria-hidden='true'>
 						<AnimatedRole />
@@ -127,32 +121,32 @@ export default function Hero() {
 
 				<motion.p
 					className='hero-description'
-					variants={item}>
-					I build software that makes complex processes simpler. With over four
-					years of full-stack development experience, I've worked on enterprise
-					applications, backend systems, and intelligent software. Currently
-					pursuing an M.S. in Computer Science at Saint Louis University.
+					variants={introItemAnimation}>
+					I'm a software engineer and computer science graduate student at
+					Saint Louis University. I've built React and SharePoint applications
+					for enterprise teams, and my current research focuses on machine
+					learning model security.
 				</motion.p>
 
 				<motion.div
 					className='hero-actions'
-					variants={item}>
+					variants={introItemAnimation}>
 					<Link
 						className='hero-btn hero-btn-primary'
 						to='/projects'>
-						Explore My Work <ArrowUpRight size={18} />
+						View projects <ArrowUpRight size={18} />
 					</Link>
 
 					<Link
 						className='hero-btn hero-btn-outline'
 						to='/contact'>
-						Let's Connect <Mail size={17} />
+						Get in touch <Mail size={17} />
 					</Link>
 				</motion.div>
 
 				<motion.div
 					className='hero-socials'
-					variants={item}>
+					variants={introItemAnimation}>
 					<a
 						href='https://github.com/pelumitegbe'
 						target='_blank'
@@ -169,13 +163,12 @@ export default function Hero() {
 						<FaLinkedinIn size={20} />
 					</a>
 
-					<span className='hero-social-line' />
 					<span>BASED IN ST. LOUIS, MO</span>
 				</motion.div>
 			</motion.div>
 
 			<motion.div
-				className='hero-new-visual'
+				className='hero-visual'
 				initial={reduceMotion ? false : { opacity: 0, scale: 0.88, x: 50 }}
 				animate={{ opacity: 1, scale: 1, x: 0 }}
 				transition={{ duration: 1, delay: 0.35 }}
@@ -192,7 +185,7 @@ export default function Hero() {
 						ease: "easeInOut",
 					}}>
 					<span className='hero-code-symbol'>{"</>"}</span>
-					<span className='hero-visual-caption'>BUILD · CREATE · INNOVATE</span>
+					<span className='hero-visual-caption'>REACT · TYPESCRIPT · PYTHON</span>
 				</motion.div>
 
 				<motion.div
@@ -216,19 +209,12 @@ export default function Hero() {
 					Python
 				</motion.div>
 
-				<span className='hero-visual-coordinate coordinate-top'>
-					38.6270° N
-				</span>
-
-				<span className='hero-visual-coordinate coordinate-bottom'>
-					90.1994° W
-				</span>
 			</motion.div>
 
 			<a
 				className='hero-scroll'
 				href='#home-highlights'>
-				<span>SCROLL TO EXPLORE</span>
+				<span>MORE ABOUT ME</span>
 				<ArrowDown size={17} />
 			</a>
 		</section>

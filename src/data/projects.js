@@ -3,13 +3,12 @@ export const projects = [
 		slug: "personality-sphere",
 		title: "Personality Sphere",
 		category: "Web Application",
-		featured: true,
 		year: "Personal Project",
 		technologies: ["Interactive UI", "Web Development"],
 		summary:
-			"An interactive personality discovery platform that helps users explore their personality type through a questionnaire and personalized results.",
+			"A personality questionnaire that gives users a type and explains the preferences behind it.",
 		problem:
-			"Personality theories can be difficult to explore through lengthy explanations. Users benefit from an engaging way to understand personality preferences and related characteristics.",
+			"I wanted to make personality preferences easier to explore through questions rather than long descriptions.",
 		role: "Developed a web application that guides users through personality questions and presents personalized insights.",
 		approach:
 			"Created an interactive questionnaire based on the four Myers-Briggs preference pairs: Extraversion/Introversion, Sensing/Intuition, Thinking/Feeling, and Judging/Perceiving. The application presents results and educational information about personality types.",
@@ -27,11 +26,10 @@ export const projects = [
 		slug: "mtn-coi-portal",
 		title: "MTN Conflict of Interest Portal",
 		category: "Enterprise Software",
-		featured: true,
-		year: "2023–2024",
+		year: "Work Project",
 		technologies: ["React", "TypeScript", "SPFx", "SCSS"],
 		summary:
-			"An enterprise application that automated conflict-of-interest declarations, approvals, and record management.",
+			"A SharePoint application for submitting, approving, and keeping track of conflict-of-interest declarations.",
 		problem:
 			"Manual conflict-of-interest declarations required significant administrative effort, including collecting submissions and tracking approval statuses.",
 		role: "Business Applications Developer at Lotus Beta Analytics, contributing to the development of enterprise SharePoint applications.",
@@ -50,22 +48,21 @@ export const projects = [
 		slug: "personal-portfolio",
 		title: "Personal Portfolio Website",
 		category: "Frontend Development",
-		featured: false,
 		year: "Personal Project",
 		technologies: ["Frontend Development", "Responsive Design", "CSS"],
 		summary:
-			"A personal portfolio website showcasing my software engineering experience, technical skills, research, and selected projects.",
+			"My portfolio, with project write-ups, work experience, and contact details.",
 		problem:
 			"A traditional résumé provides limited space to demonstrate technical work, design skills, and professional accomplishments.",
 		role: "Designed and developed a personal website to present my professional background and projects.",
 		approach:
-			"Created a visually engaging portfolio with responsive layouts, interactive elements, and sections highlighting my experience, skills, and software development projects.",
+			"Built responsive pages for my projects and experience, with project search and a light and dark theme.",
 		outcome:
-			"A deployed portfolio that provides an accessible way for recruiters, collaborators, and other visitors to explore my work.",
+			"The site brings my projects, background, and contact information together in one place.",
 		highlights: [
 			"Responsive design",
 			"Interactive interface",
-			"Professional project showcase",
+			"Project write-ups",
 		],
 		liveUrl: "https://pelumi-tegbe.vercel.app/",
 		accent: "blue",
@@ -74,11 +71,10 @@ export const projects = [
 		slug: "mtn-gtm-portal",
 		title: "MTN Go-to-Market Portal",
 		category: "Enterprise Software",
-		featured: true,
-		year: "2024",
+		year: "Work Project",
 		technologies: ["React", "TypeScript", "SPFx", "SCSS"],
 		summary:
-			"An enterprise workflow application that streamlined go-to-market requests and multi-stage approvals.",
+			"A portal for submitting go-to-market requests and tracking them through multiple approval stages.",
 		problem:
 			"Go-to-market approvals relied on fragmented email communication and manual routing, creating delays.",
 		role: "Business Applications Developer at Lotus Beta Analytics, working on enterprise workflow applications.",
@@ -97,18 +93,17 @@ export const projects = [
 		slug: "mithridatium",
 		title: "Mithridatium",
 		category: "AI & Machine Learning",
-		featured: true,
-		year: "2025–Present",
+		year: "Research Project",
 		technologies: ["Python", "CLI", "Machine Learning", "Model Evaluation"],
 		summary:
 			"A model integrity verification framework that uses black-box testing to evaluate pretrained machine learning models.",
 		problem:
-			"Assessing the integrity and behavior of pretrained machine learning models requires systematic testing and analysis.",
+			"Pretrained models need to be checked for unexpected behavior before they can be trusted in an application.",
 		role: "Developing a command-line framework for machine learning model integrity verification.",
 		approach:
 			"Building black-box testing workflows with automated analysis and reporting of model behavior across classes and datasets.",
 		outcome:
-			"Ongoing development of a framework for structured model integrity evaluation and reporting.",
+			"Still in development, with work focused on repeatable tests and reports of model behavior.",
 		highlights: [
 			"Black-box model testing",
 			"Automated analysis and reporting",
@@ -120,8 +115,7 @@ export const projects = [
 		slug: "multimodal-model-stealing",
 		title: "Multi-Modal Model Stealing Attack",
 		category: "AI & Machine Learning",
-		featured: true,
-		year: "2024–Present",
+		year: "Graduate Research",
 		technologies: [
 			"Python",
 			"CLIP",

@@ -1,56 +1,21 @@
+import { useRef } from "react";
 import { Link, useParams } from "react-router";
-import { motion, useReducedMotion } from "motion/react";
+import Reveal from "../components/Reveal.jsx";
 import {
 	ArrowLeft,
 	ArrowRight,
 	ArrowUpRight,
 	ExternalLink,
-	ShieldCheck,
-	GitBranch,
-	BrainCircuit,
-	Network,
 	Globe2,
-	Sparkles,
 	CheckCircle2,
 } from "lucide-react";
 
+import { projectArtwork } from "../data/projectArtwork.js";
 import { projects } from "../data/projects.js";
 
-const projectVisuals = {
-	"mtn-coi-portal": {
-		icon: ShieldCheck,
-		symbol: "COI",
-		label: "ENTERPRISE WORKFLOW",
-	},
-	"mtn-gtm-portal": {
-		icon: GitBranch,
-		symbol: "GTM",
-		label: "APPROVAL AUTOMATION",
-	},
-	"personality-sphere": {
-		icon: Sparkles,
-		symbol: "16",
-		label: "PERSONALITY DISCOVERY",
-	},
-	mithridatium: {
-		icon: BrainCircuit,
-		symbol: "AI",
-		label: "MODEL INTEGRITY",
-	},
-	"multimodal-model-stealing": {
-		icon: Network,
-		symbol: "ML",
-		label: "MACHINE LEARNING RESEARCH",
-	},
-	"personal-portfolio": {
-		icon: Globe2,
-		symbol: "</>",
-		label: "WEB EXPERIENCE",
-	},
-};
 
 function ProjectHeroVisual({ project }) {
-	const visual = projectVisuals[project.slug] ?? {
+	const visual = projectArtwork[project.slug] ?? {
 		icon: Globe2,
 		symbol: "DEV",
 		label: "SOFTWARE PROJECT",
@@ -83,23 +48,9 @@ function ProjectHeroVisual({ project }) {
 	);
 }
 
-function Reveal({ children, className = "" }) {
-	const shouldReduceMotion = useReducedMotion();
-
-	return (
-		<motion.div
-			className={className}
-			initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.15 }}
-			transition={{ duration: 0.6, ease: "easeOut" }}>
-			{children}
-		</motion.div>
-	);
-}
-
 export default function ProjectDetail() {
 	const { slug } = useParams();
+	const detailsRef = useRef(null);
 
 	const projectIndex = projects.findIndex((project) => project.slug === slug);
 
@@ -116,7 +67,7 @@ export default function ProjectDetail() {
 					to='/projects'
 					className='case-study-back'>
 					<ArrowLeft size={18} />
-					Back to Selected Works
+					Back to projects
 				</Link>
 			</section>
 		);
@@ -131,10 +82,8 @@ export default function ProjectDetail() {
 				to='/projects'
 				className='case-study-back'>
 				<ArrowLeft size={18} />
-				Back to Selected Works
+				Back to projects
 			</Link>
-
-			{/* INTRODUCTION */}
 
 			<Reveal className='case-study-intro'>
 				<div className='case-study-meta'>
@@ -154,35 +103,33 @@ export default function ProjectDetail() {
 							target='_blank'
 							rel='noopener noreferrer'
 							className='case-study-primary-button'>
-							Visit Live Project
+							Visit project
 							<ExternalLink size={18} />
 						</a>
 					)}
 
-					<a
-						href='#case-study-content'
+					<button
+						type='button'
+						onClick={() => detailsRef.current?.scrollIntoView({ block: "start" })}
 						className='case-study-text-link'>
-						Explore Case Study
+						Project details
 						<ArrowUpRight size={18} />
-					</a>
+					</button>
 				</div>
 			</Reveal>
-
-			{/* PROJECT VISUAL */}
 
 			<Reveal>
 				<ProjectHeroVisual project={project} />
 			</Reveal>
 
-			{/* PROJECT DETAILS */}
-
 			<div
 				id='case-study-content'
+				ref={detailsRef}
 				className='case-study-content'>
 				<Reveal className='case-study-overview'>
 					<span className='case-study-section-number'>01 / OVERVIEW</span>
 
-					<h2>Behind the project.</h2>
+					<h2>Overview</h2>
 
 					<p>{project.summary}</p>
 
@@ -222,12 +169,10 @@ export default function ProjectDetail() {
 					</Reveal>
 				</div>
 
-				{/* RESULTS */}
-
 				<Reveal className='case-study-results'>
 					<span className='case-study-section-number'>05 / IMPACT</span>
 
-					<h2>Results & impact.</h2>
+					<h2>Results</h2>
 
 					<p>{project.outcome}</p>
 
@@ -249,10 +194,8 @@ export default function ProjectDetail() {
 				</Reveal>
 			</div>
 
-			{/* NEXT PROJECT */}
-
 			<Reveal className='case-study-next'>
-				<span className='case-study-section-number'>KEEP EXPLORING</span>
+				<span className='case-study-section-number'>UP NEXT</span>
 
 				<Link
 					to={`/projects/${nextProject.slug}`}

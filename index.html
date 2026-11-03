@@ -5,12 +5,46 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="%BASE_URL%favicon.ico?v=2" />
+		<link rel="icon" type="image/png" sizes="64x64" href="%BASE_URL%favicon.png?v=2" />
+		<link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg?v=2" />
+		<meta name="theme-color" content="#1a1a1a" />
+		<script>
+			try {
+				const theme = localStorage.getItem("portfolio-theme") === "light" ? "light" : "dark";
+				document.documentElement.dataset.theme = theme;
+				document.querySelector('meta[name="theme-color"]').setAttribute(
+					"content", theme === "light" ? "#f8f6f2" : "#1a1a1a",
+				);
+			} catch {
+				document.documentElement.dataset.theme = "dark";
+			}
+		</script>
 		<title>Pelumi Oluwategbe | Software Engineer</title>
 		<meta
 			name="description"
-			content="Portfolio of Pelumi Oluwategbe, a software engineer and Computer Science graduate student specializing in full-stack development and emerging technologies." />
+			content="Portfolio of Pelumi Oluwategbe, a software engineer and Computer Science graduate student working on web applications and machine learning model security." />
+		<link rel="canonical" href="https://pelumitegbe.github.io/portfolio-react/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Pelumi Oluwategbe" />
+		<meta property="og:title" content="Pelumi Oluwategbe | Software Engineer" />
+		<meta property="og:description" content="Web applications, machine learning research, and my experience in software development and teaching." />
+		<meta property="og:url" content="https://pelumitegbe.github.io/portfolio-react/" />
+		<meta property="og:image" content="https://pelumitegbe.github.io/portfolio-react/social-preview.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Pelumi Oluwategbe — Software Engineer. Web applications and machine learning research." />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Pelumi Oluwategbe | Software Engineer" />
+		<meta name="twitter:description" content="Web applications, machine learning research, and my experience in software development and teaching." />
+		<meta name="twitter:image" content="https://pelumitegbe.github.io/portfolio-react/social-preview.png" />
+		<meta name="twitter:image:alt" content="Pelumi Oluwategbe — Software Engineer. Web applications and machine learning research." />
 	</head>
 	<body>
+		<noscript>
+			<p>This portfolio requires JavaScript. Please enable it to view my projects and experience, or email <a href="mailto:pelumitegbe@gmail.com">pelumitegbe@gmail.com</a>.</p>
+		</noscript>
 		<div id="root"></div>
 		<script
 			type="module"

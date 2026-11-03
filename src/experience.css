@@ -1,8 +1,6 @@
-/* ==========================================
-   EXPERIENCE PAGE
-========================================== */
+/* Experience page */
 
-.experience-page-new {
+.experience-page {
 	padding: 3rem 0 7rem;
 }
 
@@ -70,9 +68,7 @@
 	line-height: 1.85;
 }
 
-/* ==========================================
-   PROFESSIONAL TIMELINE
-========================================== */
+/* Professional timeline */
 
 .experience-timeline {
 	position: relative;
@@ -230,9 +226,15 @@
 	font-weight: 700;
 }
 
-/* ==========================================
-   EDUCATION
-========================================== */
+.education-grid > div {
+	min-width: 0;
+}
+
+.education-card > * {
+	max-width: 100%;
+}
+
+/* Education */
 
 .education-grid {
 	display: grid;
@@ -271,6 +273,8 @@
 	justify-content: space-between;
 	gap: 1rem;
 	margin-bottom: 2rem;
+	flex-direction: row;
+	width: 100%;
 }
 
 .education-icon {
@@ -292,41 +296,54 @@
 }
 
 .education-card h3 {
-	margin-bottom: 0.8rem;
 	color: var(--text-primary);
-	font-size: 1.45rem;
-	line-height: 1.35;
+	font-size: clamp(1.35rem, 2vw, 1.7rem);
+	line-height: 1.4;
+	display: block;
+	width: 100%;
+	margin: 0 0 0.75rem;
+	letter-spacing: -0.025em;
 }
 
 .education-school {
 	color: var(--accent);
 	font-weight: 700;
+	display: block;
+	width: 100%;
+	margin: 0 0 0.35rem;
+	font-size: 1.05rem;
 }
 
 .education-location {
 	color: var(--text-secondary);
 	font-size: 0.85rem;
+	display: block;
+	width: 100%;
+	margin: 0;
 }
 
 .education-detail {
 	margin: 1.5rem 0;
 	color: var(--text-secondary);
 	line-height: 1.8;
+	display: block;
+	width: 100%;
 }
 
 .education-achievement {
-	display: inline-block;
+	display: inline-flex;
 	padding: 0.65rem 0.9rem;
 	border: 1px solid var(--border-color);
 	border-radius: 7px;
 	color: var(--accent);
 	font-size: 0.85rem;
 	font-weight: 700;
+	align-items: center;
+	width: auto;
+	margin-top: auto;
 }
 
-/* ==========================================
-   TECHNICAL SKILLS
-========================================== */
+/* Technical skills */
 
 .skills-category-grid {
 	display: grid;
@@ -394,9 +411,7 @@
 	background: var(--bg-card);
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+/* Responsive */
 
 @media (max-width: 900px) {
 	.experience-timeline::before {
@@ -433,7 +448,7 @@
 }
 
 @media (max-width: 650px) {
-	.experience-page-new {
+	.experience-page {
 		padding-top: 1rem;
 	}
 
@@ -455,13 +470,8 @@
 		padding: 1.5rem;
 	}
 
-	.education-grid,
 	.skills-category-grid {
 		grid-template-columns: 1fr;
-	}
-
-	.education-card {
-		padding: 1.8rem;
 	}
 
 	.skill-category-card {
@@ -476,80 +486,6 @@
 	.skill-chip {
 		transition: none;
 	}
-}
-
-/* Education card layout corrections */
-
-.education-grid > div {
-	min-width: 0;
-}
-
-.education-card > * {
-	max-width: 100%;
-}
-
-.education-card-top {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	gap: 1rem;
-	margin-bottom: 2rem;
-}
-
-.education-card h3 {
-	display: block;
-	width: 100%;
-	margin: 0 0 0.75rem;
-	color: var(--text-primary);
-	font-size: clamp(1.35rem, 2vw, 1.7rem);
-	line-height: 1.4;
-	letter-spacing: -0.025em;
-}
-
-.education-school {
-	display: block;
-	width: 100%;
-	margin: 0 0 0.35rem;
-	color: var(--accent);
-	font-size: 1.05rem;
-	font-weight: 700;
-}
-
-.education-location {
-	display: block;
-	width: 100%;
-	margin: 0;
-	color: var(--text-secondary);
-	font-size: 0.85rem;
-}
-
-.education-detail {
-	display: block;
-	width: 100%;
-	margin: 1.5rem 0;
-	color: var(--text-secondary);
-	line-height: 1.8;
-}
-
-.education-achievement {
-	display: inline-flex;
-	align-items: center;
-	width: auto;
-	margin-top: auto;
-	padding: 0.65rem 0.9rem;
-	border: 1px solid var(--border-color);
-	border-radius: 7px;
-	color: var(--accent);
-	font-size: 0.85rem;
-	font-weight: 700;
-}
-.education-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	align-items: stretch;
-	gap: 2rem;
 }
 
 @media (max-width: 750px) {

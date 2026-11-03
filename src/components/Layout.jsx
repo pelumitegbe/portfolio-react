@@ -76,7 +76,7 @@ export default function Layout() {
 						<NavLink
 							to='/contact'
 							className='nav-contact-btn'>
-							Let's Talk
+							Contact
 							<ArrowUpRight size={17} />
 						</NavLink>
 
@@ -118,7 +118,7 @@ export default function Layout() {
 							P<span>.</span>
 						</span>
 
-						<p>Building thoughtful software, one solution at a time.</p>
+						<p>Software engineer · St. Louis, Missouri</p>
 					</div>
 
 					<div className='footer-links'>
@@ -142,7 +142,7 @@ export default function Layout() {
 
 				<div className='footer-bottom'>
 					<span>© {new Date().getFullYear()} Pelumi Oluwategbe</span>
-					<span>Designed & built with React</span>
+					<span>Built with React</span>
 				</div>
 			</footer>
 		</>

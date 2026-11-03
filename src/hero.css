@@ -1,12 +1,10 @@
-/* ==========================================
-   ANIMATED HERO
-========================================== */
+/* Animated hero */
 
-.home-redesign {
+.home-page {
 	width: 100%;
 }
 
-.home-redesign .hero-new {
+.home-page .hero {
 	position: relative;
 	min-height: min(780px, 90vh);
 	display: grid;
@@ -17,28 +15,9 @@
 	isolation: isolate;
 }
 
-.hero-new-content {
+.hero-content {
 	position: relative;
 	z-index: 2;
-}
-
-.hero-eyebrow {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.7rem;
-	color: var(--accent);
-	font-size: 0.68rem;
-	font-weight: 700;
-	letter-spacing: 0.12em;
-	margin-bottom: 2.5rem;
-}
-
-.availability-dot {
-	width: 8px;
-	height: 8px;
-	background: #6ee7b7;
-	border-radius: 50%;
-	box-shadow: 0 0 15px rgba(110, 231, 183, 0.7);
 }
 
 .hero-greeting {
@@ -125,11 +104,11 @@
 
 .hero-btn-primary {
 	background: var(--accent);
-	color: var(--bg-primary) !important;
+	color: var(--bg-primary);
 }
 
 .hero-btn-outline {
-	color: var(--text-primary) !important;
+	color: var(--text-primary);
 	border: 1px solid var(--border-color);
 }
 
@@ -157,23 +136,15 @@
 	transform: translateY(-3px);
 }
 
-.hero-social-line {
-	width: 35px;
-	height: 1px;
-	background: var(--border-color);
-}
-
 .hero-socials > span:last-child {
 	color: var(--text-secondary);
 	font-size: 0.7rem;
 	letter-spacing: 0.1em;
 }
 
-/* ==========================================
-   HERO VISUAL
-========================================== */
+/* Hero visual */
 
-.hero-new-visual {
+.hero-visual {
 	position: relative;
 	width: 100%;
 	aspect-ratio: 1;
@@ -265,23 +236,6 @@
 	left: 8%;
 }
 
-.hero-visual-coordinate {
-	position: absolute;
-	color: var(--text-secondary);
-	font-size: 0.7rem;
-	letter-spacing: 0.1em;
-}
-
-.coordinate-top {
-	top: 5%;
-	right: 10%;
-}
-
-.coordinate-bottom {
-	bottom: 5%;
-	right: 10%;
-}
-
 .hero-glow {
 	position: absolute;
 	z-index: -1;
@@ -315,16 +269,14 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 0.6rem;
-	color: var(--text-secondary) !important;
+	color: var(--text-secondary);
 	font-size: 0.65rem;
 	font-weight: 700;
 	letter-spacing: 0.15em;
 	text-decoration: none;
 }
 
-/* ==========================================
-   HIGHLIGHTS
-========================================== */
+/* Highlights */
 
 .highlights-section {
 	display: grid;
@@ -334,7 +286,7 @@
 	border-top: 1px solid var(--border-color);
 }
 
-.new-section-label {
+.section-label {
 	display: inline-block;
 	color: var(--accent);
 	font-size: 0.75rem;
@@ -398,9 +350,7 @@
 	font-size: 0.85rem;
 }
 
-/* ==========================================
-   ACCESSIBILITY AND RESPONSIVENESS
-========================================== */
+/* Accessibility and responsiveness */
 
 .sr-only {
 	position: absolute;
@@ -415,13 +365,13 @@
 }
 
 @media (max-width: 900px) {
-	.home-redesign .hero-new {
+	.home-page .hero {
 		grid-template-columns: 1fr;
 		gap: 1rem;
 		padding-top: 3rem;
 	}
 
-	.hero-new-visual {
+	.hero-visual {
 		width: min(100%, 480px);
 		margin: 0 auto;
 	}
@@ -435,11 +385,6 @@
 @media (max-width: 600px) {
 	.hero-name {
 		font-size: clamp(4rem, 17vw, 6rem);
-	}
-
-	.hero-eyebrow {
-		font-size: 0.6rem;
-		letter-spacing: 0.06em;
 	}
 
 	.hero-description {

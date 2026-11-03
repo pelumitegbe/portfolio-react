@@ -34,24 +34,24 @@ export default function Highlights() {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.2 }}
 				transition={{ duration: 0.65 }}>
-				<span className='new-section-label'>A LITTLE ABOUT ME</span>
+				<span className='section-label'>A LITTLE ABOUT ME</span>
 
 				<h2>
-					Turning ideas into
+					Software, teaching,
 					<br />
-					<span>real-world impact.</span>
+					<span>and research.</span>
 				</h2>
 
 				<p>
-					My work spans enterprise software, full-stack development, and machine
-					learning research. I enjoy solving problems that require both
-					thoughtful engineering and practical execution.
+					At Lotus Beta Analytics, I worked on MTN's declaration and approval
+					portals. At SLU, I've helped students with programming coursework
+					while studying how machine learning models can be tested and copied.
 				</p>
 
 				<Link
 					to='/experience'
 					className='highlights-link'>
-					More About Me <ArrowUpRight size={18} />
+					My experience <ArrowUpRight size={18} />
 				</Link>
 			</motion.div>
 

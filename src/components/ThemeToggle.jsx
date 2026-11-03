@@ -14,6 +14,9 @@ export default function ThemeToggle() {
 
 	useEffect(() => {
 		document.documentElement.dataset.theme = theme;
+		document.querySelector('meta[name="theme-color"]')?.setAttribute(
+			"content", theme === "light" ? "#f8f6f2" : "#1a1a1a",
+		);
 
 		try {
 			localStorage.setItem("portfolio-theme", theme);
@@ -25,7 +28,7 @@ export default function ThemeToggle() {
 	return (
 		<button
 			type='button'
-			className='theme-toggle-new'
+			className='theme-toggle'
 			onClick={() =>
 				setTheme((current) => (current === "dark" ? "light" : "dark"))
 			}

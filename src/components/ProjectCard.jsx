@@ -1,51 +1,11 @@
 import { Link } from "react-router";
 import { motion, useReducedMotion } from "motion/react";
-import {
-	ArrowUpRight,
-	ExternalLink,
-	GitBranch,
-	BrainCircuit,
-	ShieldCheck,
-	Network,
-	Globe2,
-	Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, ExternalLink, Globe2 } from "lucide-react";
+import { projectArtwork } from "../data/projectArtwork.js";
 
-const projectVisuals = {
-	"mtn-coi-portal": {
-		icon: ShieldCheck,
-		label: "ENTERPRISE WORKFLOW",
-		symbol: "COI",
-	},
-	"mtn-gtm-portal": {
-		icon: GitBranch,
-		label: "APPROVAL AUTOMATION",
-		symbol: "GTM",
-	},
-	"personality-sphere": {
-		icon: Sparkles,
-		label: "PERSONALITY DISCOVERY",
-		symbol: "16",
-	},
-	mithridatium: {
-		icon: BrainCircuit,
-		label: "MODEL INTEGRITY",
-		symbol: "AI",
-	},
-	"multimodal-model-stealing": {
-		icon: Network,
-		label: "MACHINE LEARNING RESEARCH",
-		symbol: "ML",
-	},
-	"personal-portfolio": {
-		icon: Globe2,
-		label: "WEB EXPERIENCE",
-		symbol: "</>",
-	},
-};
 
 function ProjectVisual({ project }) {
-	const visual = projectVisuals[project.slug] ?? {
+	const visual = projectArtwork[project.slug] ?? {
 		icon: Globe2,
 		label: "SOFTWARE PROJECT",
 		symbol: "DEV",
@@ -79,12 +39,12 @@ function ProjectVisual({ project }) {
 }
 
 export default function ProjectCard({ project }) {
-	const shouldReduceMotion = useReducedMotion();
+	const reduceMotion = useReducedMotion();
 
 	return (
 		<motion.article
 			className='project-card'
-			initial={shouldReduceMotion ? false : { opacity: 0, y: 35 }}
+			initial={reduceMotion ? false : { opacity: 0, y: 35 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.15 }}
 			transition={{ duration: 0.6, ease: "easeOut" }}>
@@ -122,7 +82,7 @@ export default function ProjectCard({ project }) {
 					<Link
 						to={`/projects/${project.slug}`}
 						className='project-link'>
-						View Case Study <ArrowUpRight size={18} />
+						Read more <ArrowUpRight size={18} />
 					</Link>
 
 					{project.liveUrl && (
@@ -131,7 +91,7 @@ export default function ProjectCard({ project }) {
 							target='_blank'
 							rel='noopener noreferrer'
 							className='project-live-link'>
-							Live Demo <ExternalLink size={16} />
+							Visit site <ExternalLink size={16} />
 						</a>
 					)}
 				</div>

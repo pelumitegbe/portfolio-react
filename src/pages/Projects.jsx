@@ -4,19 +4,19 @@ import ProjectCard from "../components/ProjectCard.jsx";
 import { Search, X } from "lucide-react";
 
 export default function Projects() {
-	const [query, setQuery] = useState("");
+	const [searchTerm, setSearchTerm] = useState("");
 
-	const normalizedQuery = query.trim().toLowerCase();
+	const searchText = searchTerm.trim().toLowerCase();
 
 	const filteredProjects = projects.filter((project) => {
-		const searchableText = `
-      ${project.title}
-      ${project.category}
-      ${project.summary}
-      ${project.technologies.join(" ")}
-    `.toLowerCase();
+		const searchableText = [
+			project.title,
+			project.category,
+			project.summary,
+			...project.technologies,
+		].join(" ").toLowerCase();
 
-		return searchableText.includes(normalizedQuery);
+		return searchableText.includes(searchText);
 	});
 
 	return (
@@ -24,8 +24,8 @@ export default function Projects() {
 			<h1>My Projects</h1>
 
 			<p>
-				A selection of projects showcasing my experience in software
-				engineering, web development, and machine learning.
+				Web applications I've worked on and the machine learning research
+				I'm doing now.
 			</p>
 
 			<div className='portfolio-search'>
@@ -38,24 +38,26 @@ export default function Projects() {
 				<input
 					id='project-search'
 					type='search'
-					value={query}
-					onChange={(event) => setQuery(event.target.value)}
+					value={searchTerm}
+					onChange={(event) => setSearchTerm(event.target.value)}
 					placeholder='Search projects...'
 					aria-label='Search projects'
 				/>
 
-				{query && (
+				{searchTerm && (
 					<button
 						type='button'
 						className='portfolio-search-clear'
-						onClick={() => setQuery("")}
+						onClick={() => setSearchTerm("")}
 						aria-label='Clear search'>
 						<X size={18} />
 					</button>
 				)}
 			</div>
 
-			<p role='status'>{filteredProjects.length} project(s) found</p>
+			<p role='status'>
+				{filteredProjects.length} {filteredProjects.length === 1 ? "project" : "projects"} found
+			</p>
 
 			{filteredProjects.length > 0 ? (
 				<div className='projects-grid'>

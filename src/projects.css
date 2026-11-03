@@ -1,61 +1,11 @@
-/* =========================================
-   PROJECTS PAGE
-========================================= */
+/* Projects page */
 
 .projects-page {
 	width: 100%;
 	padding: 4rem 0 10rem;
 }
 
-/* =========================================
-   INTRODUCTION
-========================================= */
-
-.projects-intro {
-	max-width: 900px;
-	margin-bottom: 3.5rem;
-}
-
-.projects-eyebrow {
-	display: inline-block;
-	margin-bottom: 1.5rem;
-	color: var(--accent);
-	font-size: 0.8rem;
-	font-weight: 700;
-	letter-spacing: 0.2em;
-}
-
-.projects-intro h1 {
-	margin: 0 0 1.5rem;
-	color: var(--text-primary);
-	font-size: clamp(3.5rem, 7vw, 6.5rem);
-	font-weight: 800;
-	line-height: 1.05;
-	letter-spacing: -0.065em;
-}
-
-.projects-intro h1 span {
-	color: var(--accent);
-}
-
-.projects-intro p {
-	max-width: 700px;
-	margin: 0;
-	color: var(--text-secondary);
-	font-size: clamp(1rem, 1.4vw, 1.2rem);
-	line-height: 1.85;
-}
-
-/* =========================================
-   SEARCH
-========================================= */
-
-.projects-toolbar {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	margin-bottom: 3rem;
-}
+/* Search */
 
 .portfolio-search {
 	position: relative;
@@ -127,24 +77,13 @@
 	border-radius: 4px;
 }
 
-/* =========================================
-   PROJECT GRID
-========================================= */
-
-.projects-page .projects-grid {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	align-items: stretch;
-	gap: 2rem;
-}
+/* Project grid */
 
 .projects-page .projects-grid > * {
 	min-width: 0;
 }
 
-/* =========================================
-   NO RESULTS
-========================================= */
+/* No results */
 
 .projects-page .no-results {
 	padding: 5rem 2rem;
@@ -162,9 +101,7 @@
 	color: var(--text-secondary);
 }
 
-/* =========================================
-   LIGHT MODE
-========================================= */
+/* Light mode */
 
 [data-theme="light"] .portfolio-search {
 	border-bottom-color: rgba(166, 107, 48, 0.3);
@@ -174,51 +111,24 @@
 	border-bottom-color: var(--accent);
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 1050px) {
-	.projects-page .projects-grid {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-}
+/* Responsive */
 
 @media (max-width: 700px) {
 	.projects-page {
 		padding: 3rem 0 6rem;
 	}
 
-	.projects-intro {
-		margin-bottom: 2rem;
-	}
-
-	.projects-intro h1 {
-		font-size: clamp(2.8rem, 10vw, 4rem);
-	}
-
-	.projects-toolbar {
-		justify-content: flex-start;
-		margin-bottom: 2.5rem;
-	}
-
 	.portfolio-search {
 		max-width: 100%;
 	}
-
-	.projects-page .projects-grid {
-		grid-template-columns: 1fr;
-		gap: 1.5rem;
-	}
 }
 
-/* =========================================
-   PROJECT CARD REDESIGN
-========================================= */
+/* Project cards */
 
 .projects-page .projects-grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: stretch;
 	gap: 2.5rem;
 	margin-top: 2rem;
 }
@@ -281,10 +191,6 @@
 
 .project-visual--green {
 	--visual-accent: #9be6c1;
-}
-
-.project-visual--orange {
-	--visual-accent: #ffbd8b;
 }
 
 .project-visual-grid {
@@ -505,9 +411,7 @@
 [data-theme="light"] .projects-page .tech-badge {
 	background: #f4f1ec;
 }
-/* =========================================
-   LIGHT MODE — PROJECT VISUALS
-========================================= */
+/* Light mode — project visuals */
 
 [data-theme="light"] .project-visual {
 	background:
@@ -577,10 +481,6 @@
 	--visual-accent: #398d68;
 }
 
-[data-theme="light"] .project-visual--orange {
-	--visual-accent: #bf793b;
-}
-
 /* Responsive */
 
 @media (max-width: 800px) {
@@ -626,9 +526,7 @@
 	}
 }
 
-/* =========================================
-   PROJECT CASE STUDY
-========================================= */
+/* Project case study */
 
 .case-study-page {
 	width: 100%;
@@ -640,7 +538,7 @@
 	align-items: center;
 	gap: 0.65rem;
 	margin-bottom: 4rem;
-	color: var(--text-secondary) !important;
+	color: var(--text-secondary);
 	font-size: 0.9rem;
 	font-weight: 600;
 	text-decoration: none;
@@ -648,7 +546,7 @@
 }
 
 .case-study-back:hover {
-	color: var(--accent) !important;
+	color: var(--accent);
 }
 
 .case-study-intro {
@@ -712,7 +610,7 @@
 	padding: 1rem 1.5rem;
 	border-radius: 8px;
 	background: var(--accent);
-	color: var(--bg-primary) !important;
+	color: var(--bg-primary);
 	font-size: 0.9rem;
 	font-weight: 700;
 	text-decoration: none;
@@ -724,6 +622,11 @@
 }
 
 .case-study-text-link {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font: inherit;
+	cursor: pointer;
 	display: inline-flex;
 	align-items: center;
 	gap: 0.6rem;
@@ -738,9 +641,7 @@
 	text-underline-offset: 5px;
 }
 
-/* =========================================
-   CASE STUDY HERO VISUAL
-========================================= */
+/* Case study hero visual */
 
 .case-study-visual {
 	--visual-accent: #ffdbac;
@@ -858,11 +759,10 @@
 	right: 32px;
 }
 
-/* =========================================
-   OVERVIEW
-========================================= */
+/* Overview */
 
 .case-study-content {
+	scroll-margin-top: 110px;
 	max-width: 1050px;
 	margin: 0 auto;
 }
@@ -904,9 +804,7 @@
 	font-size: 0.85rem;
 }
 
-/* =========================================
-   STORY SECTIONS
-========================================= */
+/* Story sections */
 
 .case-study-story {
 	padding: 2rem 0;
@@ -941,9 +839,7 @@
 	line-height: 1.9;
 }
 
-/* =========================================
-   RESULTS
-========================================= */
+/* Results */
 
 .case-study-results {
 	padding: 6rem 0;
@@ -974,9 +870,7 @@
 	color: var(--accent);
 }
 
-/* =========================================
-   NEXT PROJECT
-========================================= */
+/* Next project */
 
 .case-study-next {
 	padding-top: 4rem;
@@ -989,7 +883,7 @@
 	justify-content: space-between;
 	gap: 2rem;
 	margin-top: 2rem;
-	color: var(--text-primary) !important;
+	color: var(--text-primary);
 	text-decoration: none;
 }
 
@@ -1020,9 +914,7 @@
 	transform: translateX(8px);
 }
 
-/* =========================================
-   NOT FOUND
-========================================= */
+/* Not found */
 
 .case-study-not-found {
 	min-height: 65vh;
@@ -1039,9 +931,7 @@
 	color: var(--text-secondary);
 }
 
-/* =========================================
-   LIGHT MODE
-========================================= */
+/* Light mode */
 
 [data-theme="light"] .case-study-visual {
 	background:
@@ -1083,9 +973,7 @@
 	--visual-accent: #398d68;
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+/* Responsive */
 
 @media (max-width: 800px) {
 	.case-study-page {
