@@ -18,10 +18,6 @@ export default function Layout() {
 	const reduceMotion = useReducedMotion();
 
 	useEffect(() => {
-		setMenuOpen(false);
-	}, [location.pathname]);
-
-	useEffect(() => {
 		if (!menuOpen) return;
 
 		function handleEscape(event) {
@@ -50,6 +46,7 @@ export default function Layout() {
 					<NavLink
 						to='/'
 						end
+						onClick={() => setMenuOpen(false)}
 						className='site-logo'
 						aria-label='Pelumi Oluwategbe - Home'>
 						P<span>.</span>
